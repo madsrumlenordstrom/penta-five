@@ -11,7 +11,7 @@ class PentaFiveSpec extends AnyFlatSpec with ChiselScalatestTester {
   val maxDelay = 56
   val program = "program.txt"
   "PentaFive" should "pass" in {
-    test(new PentaFive(memSize, bSizeI, linesI, maxDelay, program)).withAnnotations(Seq(/*WriteVcdAnnotation, */VerilatorBackendAnnotation)) { dut =>
+    test(new PentaFive(memSize, bSizeI, linesI, maxDelay, program)).withAnnotations(Seq(WriteVcdAnnotation, VerilatorBackendAnnotation)) { dut =>
       dut.clock.setTimeout(0)
       //dut.clock.step(1000000)
       var lastCSR = 0
