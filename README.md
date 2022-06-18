@@ -2,6 +2,7 @@
 A RISC-V vector processor written in Chisel HDL.
 
 This repository contains all sources files for the project.
+The processor was designed and implemented by Ulrik Helk and Mads Rumle Nordstroem.
 
 Before generating verilog a program file needs to exist in the top directory of the project.
 It should be called program.txt and it should contain a program written in pure hex machine code.
@@ -34,4 +35,16 @@ To run a simulation do:
 ```
 make test
 ```
+
+To quicly see waveforms from simulation do:
+```
+make wave
+```
+or simulate and waveforms in one command:
+```
+make test wave
+```
+
+More options for configuring make targets can be specified in a config.mk file.
+
 
