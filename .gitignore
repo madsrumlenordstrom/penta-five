@@ -1,0 +1,28 @@
+# Ignore this file on macOS
+.DS_Store
+
+# Text editor
+.idea
+.vscode
+
+# sbt Specific
+.bsp
+
+# For build
+project/project/
+project/target/
+target/
+build
+generated
+.idea/
+test_run_dir
+config.mk
+diagrammer/
+*.gtkw
+*.txt
+
+#metals
+.metals/
+.bloop/
+.ammonite/
+metals.sbt
