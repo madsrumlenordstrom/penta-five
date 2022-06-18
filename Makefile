@@ -19,10 +19,10 @@ DIRS = $(SCALADIR) $(TESTDIR) $(HWBUILDDIR) $(GENERATED)
 # Targets for verilog and testing
 MAINTARGET ?= PentaFive
 TESTTARGET ?= PentaFiveSpec
-WAVETARGET ?= # Change to main later
-WAVECONFIG ?=
+WAVETARGET ?= $(CURDIR)/test_run_dir/PentaFive_should_pass/PentaFive.vcd
+WAVECONFIG ?= # Use a config file to configure gtkwave
+DIAGRAMTARGET ?=  $(CURDIR)/build/PentaFive.fir
 DIAGRAMMERDIR ?=
-DIAGRAMTARGET ?=
 
 .PHONY: all
 all: run test
@@ -83,12 +83,13 @@ diagram:
 # Cleanup working directory
 .PHONY: clean
 clean:
+	@echo "Cleaning workspace"
 	$(RM) -r *.v *.fir *.anno.json test_run_dir $(HWBUILDDIR) target project/target *.o *.bin *.txt
 
 # Cleanup working directory included configuration files
 .PHONY: veryclean
-veryclean:
-	$(RM) -r *.v *.fir *.anno.json test_run_dir $(HWBUILDDIR) target project/target project/.bloop project/project project/metals.sbt .bloop .bsp .idea .metals .vscode
+veryclean: clean
+	$(RM) -r project/.bloop project/project project/metals.sbt .bloop .bsp .idea .metals .vscode
 
 
 # Show variables for debugging
