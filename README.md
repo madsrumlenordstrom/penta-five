@@ -9,7 +9,7 @@ Verilator is needed to run simulations.
 
 Before generating verilog a program file needs to exist in the top directory of the project.
 It should be called program.txt and it should contain a program written in pure hex machine code.
-The following is an example a program that blinks a I/O port:
+The following is an example program that blinks a I/O port:
 ```
 00000893 
 02100513 
