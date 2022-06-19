@@ -4,6 +4,9 @@ A RISC-V vector processor written in Chisel HDL.
 This repository contains all sources files for the project.
 The processor was designed and implemented by Ulrik Helk and Mads Rumle Nordstroem.
 
+This project asumes a unix like OS and basic development tools installed. 
+Verilator is needed to run simulations.
+
 Before generating verilog a program file needs to exist in the top directory of the project.
 It should be called program.txt and it should contain a program written in pure hex machine code.
 The following is an example a program that blinks a I/O port:
