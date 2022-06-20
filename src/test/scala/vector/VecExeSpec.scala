@@ -1,4 +1,4 @@
-package vector
+/*package vector
 import chisel3._
 import chisel3.util.BitPat.bitPatToUInt
 import chisel3.util.log2Up
@@ -78,4 +78,4 @@ class VecExeSpec extends AnyFlatSpec with ChiselScalatestTester {
       dut.clock.step()
     }
   }
-}
+}*/

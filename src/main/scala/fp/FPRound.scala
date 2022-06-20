@@ -50,6 +50,6 @@ class FPRound(manBits: Int) extends Module {
     }
 }
 
-object FPRoundMain extends App {
-    emitVerilog(new FPRound(48), args)
-}
+//object FPRoundMain extends App {
+//    emitVerilog(new FPRound(48), args)
+//}
