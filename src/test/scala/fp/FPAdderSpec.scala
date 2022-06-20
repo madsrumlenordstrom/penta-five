@@ -10,8 +10,8 @@ class FPAdderSpec extends AnyFlatSpec with ChiselScalatestTester {
   "FPAdderSpec " should "pass" in {
     test(new FPAddWRound).withAnnotations(Seq(WriteVcdAnnotation)) {dut =>
       def input(a: Float, b: Float, sub: Boolean):Unit={
-        dut.io.a.poke(floatToIntBits(a).S)
-        dut.io.b.poke(floatToIntBits(b).S)
+        dut.io.a.poke(floatToIntBits(a))
+        dut.io.b.poke(floatToIntBits(b))
         dut.io.sub.poke(sub.B)
       }
       def printDetails(a: Float, b: Float, sum: Float, sub: Boolean): Unit ={

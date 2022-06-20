@@ -3,7 +3,7 @@ import chisel3._
 
 class FPAddWRound extends Module{
   val io = IO(new Bundle{
-    val a, b = Input(SInt(32.W))
+    val a, b = Input(UInt(32.W))
     val sub, en = Input(Bool())
     val y = Output(UInt(32.W))
   })

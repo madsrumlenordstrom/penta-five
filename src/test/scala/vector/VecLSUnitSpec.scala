@@ -25,6 +25,7 @@ class VecLSUnitWMem(memSize: Int, init: Seq[Int]) extends Module{
   connect(memCtrl.io.clients(0).elements, lsUnit.io.ram.elements)
   connect(memCtrl.io.ram.elements, ram.io.elements)
   connect(io.elements, lsUnit.io.core.elements)
+  lsUnit.io.en := true.B
 }
 
 
@@ -49,12 +50,12 @@ class VecLSUnitSpec extends AnyFlatSpec with ChiselScalatestTester {
         }
         res
       }
-      def load(addr: Int, vl: Int, ew: Int, vm: Int, mask: Boolean): Unit ={
+      def load(addr: Int, vl: Int, ew: Int, vm: Boolean, mask: Boolean): Unit ={
         var currAddr = addr
         dut.io.addr.poke(addr.U)
         dut.io.vl.poke(vl.U)
         dut.io.ew.poke(ew.U)
-        dut.io.vm.poke(vm.U)
+        dut.io.vm.poke(vm.B)
         dut.io.mask.poke(mask.B)
         dut.io.valid.poke(true.B)
         for(i <- 0 until vl){
@@ -86,7 +87,7 @@ class VecLSUnitSpec extends AnyFlatSpec with ChiselScalatestTester {
       var addr = 4
       var vl = 8
       var ew = 0
-      var vm = 0x7FFFFFFF
+      var vm = false
       var mask = false
       load(addr, vl, ew, vm, mask)
     }

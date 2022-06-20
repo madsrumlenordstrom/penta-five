@@ -9,8 +9,8 @@ import fp.FPTestUtility._
 import java.lang.Float.{floatToIntBits, intBitsToFloat}
 class FPSqrtWRound extends Module{
   val io = IO(new Bundle{
-    val a  = Input(SInt(32.W))
-    val y = Output(SInt(32.W))
+    val a  = Input(UInt(32.W))
+    val y = Output(UInt(32.W))
     val valid, en = Input(Bool())
     val ready = Output(Bool())
   })
@@ -23,7 +23,7 @@ class FPSqrtWRound extends Module{
   rounder.io.en := io.en
   rounder.io.a := squareRoot.io.y
   rounder.io.rm := 0.U
-  io.y := rounder.io.y.asSInt
+  io.y := rounder.io.y.asUInt
 
 }
 
@@ -52,7 +52,7 @@ class FPSqrtSpec extends AnyFlatSpec with ChiselScalatestTester {
         val a = r.nextFloat()*100
         val res = math.sqrt(a.toDouble).toFloat
         dut.io.valid.poke(true.B)
-        dut.io.a.poke(floatToIntBits(a).S)
+        dut.io.a.poke(floatToIntBits(a).asUInt)
         dut.clock.step()
         while(!dut.io.ready.peek.litToBoolean){
           dut.clock.step()

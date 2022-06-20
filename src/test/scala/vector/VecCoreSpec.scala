@@ -49,11 +49,11 @@ class VecCoreSpec extends AnyFlatSpec with ChiselScalatestTester {
         val rd = dut.io.scalar.rd.peekInt().toInt
         val rs1 = dut.io.scalar.rs1.peekInt().toInt
         val rs2 = dut.io.scalar.rs2.peekInt().toInt
-        val xd1 = dut.io.scalar.xd1.peekInt().toInt
+        val xd1 = dut.io.scalar.xs1.peekInt().toInt
         dut.io.scalar.xs1.poke(x(rs1).U)
         dut.io.scalar.xs2.poke(x(rs2).U)
         if(we){
-          x(rd) = xd1
+          x(rd) = xs1
         }
         dut.clock.step()
       }

@@ -12,9 +12,9 @@ class PentaSpec extends AnyFlatSpec with ChiselScalatestTester {
   val bSizeI = 64
   val linesI = 4
   val maxDelay = 56
-  val program = "DAPXYScalar.txt"
+  val program = "program.txt"
   "PentaFive" should "pass" in {
-    test(new Penta(memSize, bSizeI, linesI, maxDelay, program)).withAnnotations(Seq(WriteVcdAnnotation)) { dut =>
+    test(new Penta(memSize, bSizeI, linesI, maxDelay, program)).withAnnotations(Seq(WriteVcdAnnotation, VerilatorBackendAnnotation)) { dut =>
       dut.clock.setTimeout(250)
       dut.clock.step(80)
     }

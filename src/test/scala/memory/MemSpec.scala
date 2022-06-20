@@ -1,4 +1,4 @@
-package memory
+/*package memory
 
 
 import chisel3._
@@ -55,3 +55,4 @@ class MemSpec extends AnyFlatSpec with ChiselScalatestTester {
     }
   }
 }
+*/

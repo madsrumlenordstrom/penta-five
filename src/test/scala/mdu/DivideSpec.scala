@@ -1,4 +1,4 @@
-package mdu
+/*package mdu
 import chisel3._
 import chiseltest._
 import org.scalatest.flatspec.AnyFlatSpec
@@ -142,3 +142,4 @@ class DivideSpec extends AnyFlatSpec with ChiselScalatestTester {
     }
   }
 }
+*/
