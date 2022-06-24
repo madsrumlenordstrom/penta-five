@@ -4,7 +4,7 @@ A RISC-V vector processor written in Chisel HDL.
 This repository contains all sources files for the project.
 The processor was designed and implemented by Ulrik Helk and Mads Rumle Nordstroem.
 
-This project asumes a unix like OS and basic development tools installed. 
+This project assumes a unix like OS and basic development tools installed. 
 
 ```sbt``` is used as a build tool and ```verilator``` is needed to run simulations.
 
@@ -40,7 +40,7 @@ To run a simulation do:
 make test
 ```
 
-To quicly see waveforms from simulation do:
+To quickly see waveforms from simulation do:
 ```
 make wave
 ```
